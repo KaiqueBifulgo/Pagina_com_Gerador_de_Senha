@@ -11,7 +11,7 @@ html, body {
 }
 
 html {
-    background: linear-gradient(#010000 0%, #474141 100%);
+    background: linear-gradient(#1710ea 0%, #16ea99 100%);
 }
 
 input:focus {
@@ -23,7 +23,7 @@ input:focus {
     min-height: 90vh;
     margin: 3rem auto;
     display: flex;
-    box-shadow: rgb(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    box-shadow: rgba(238, 91, 6, 0.25) 0px 13px 27px -5px,
     rgb(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
@@ -39,7 +39,7 @@ input:focus {
     padding: 2rem;
     display: flex;
     align-items: center;
-    background-color: rgba(199, 51, 51, 0.7);
+    background-color: rgba(209, 169, 169, 0.7);
 }
 
 #register-banner h1 {
@@ -47,10 +47,12 @@ input:focus {
     margin-bottom: 1.5rem;
     word-spacing: 50rem;
     color: #fff;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #010000;
 }
 
 #register-form {
-    background-color: #f1dfdf;
+    background-color: #f8e9e9;
     padding: 2rem;
     width: 50%;
     display: flex;
@@ -85,6 +87,7 @@ input:focus {
     border: none;
     border-bottom: 1px solid #190f0f;
     padding: 0.6rem 0;
+    background-color: #f8e9e9;
 }
 
 #generate-password {
@@ -98,7 +101,7 @@ input:focus {
 }
 
 #register-form #generated-password {
-    border: 1px solid #2318b3;
+    border: 1px solid #010000;
     border-radius: 4px;
     font-weight: bold;
     font-size: 1.2rem;
@@ -114,8 +117,10 @@ input:focus {
     color: #190f0f;
 }
 
-#register-form input[type="submit"]{
-    background-color: #ff0404df;
+#register-form input[type="submit"],
+#button-create-password,
+#copy-password {
+    background-color: #0099ff;
     color: #190f0f;
     opacity: 0.8;
     border: none;
@@ -129,4 +134,45 @@ input:focus {
 
 #register-form input[type="submit"]:hover {
     opacity: 1;
+}
+
+/* OPÇÕES */
+#generate-options {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #010000;
+}
+
+#generate-options .form-control {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#generate-options label {
+    font-size: 0.8rem;
+}
+
+#generate-options input[type="text"] {
+    max-width: 30px;
+    text-align: center;
+    border: 1px solid #010000;
+}
+
+#button-create-password {
+    background-color: #0099ff;
+    display: block;
+    margin: 0 auto;
+}
+
+#copy-password {
+    margin: 1rem auto;
+    background-color: transparent;
+    border: 2px solid #2318b3;
+    color: #010000;
+    padding: 0.5rem 1rem;
+}
+
+.hide {
+    display: none;
 }
