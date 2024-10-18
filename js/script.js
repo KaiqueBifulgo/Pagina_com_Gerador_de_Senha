@@ -2,6 +2,15 @@
 const generatePasswordButton = document.querySelector("#generate-password");
 const generatedPasswordElement = document.querySelector("#generated-password");
 
+// NOVOS ELEMENTOS
+const openGeneratorButton = document.querySelector("#generate-password");
+const containerGeneratePassword = document.querySelector("#generate-options");
+const lengthInput = document.querySelector("#length");
+const letterInput = document.querySelector("#lettters");
+const numberInput = document.querySelector("#numbers");
+const symbolInput = document.querySelector("#symbols");
+const copyPasswordBtn = document.querySelector("#copy-password");
+
 
 // FUNÇÕES
 const getLowerCase = () => {
@@ -56,4 +65,8 @@ generatePasswordButton.addEventListener("click", () => {
         getNumber,
         getSymbol
     )
+})
+
+openGeneratorButton.addEventListener("click", () => {
+    containerGeneratePassword.classList.toggle("hide");
 })
