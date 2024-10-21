@@ -27,7 +27,7 @@ const getNumber = () => {
 
 const getSymbol = () => {
     const symbols = "!@#$%&*()-=?|][*-/<>;:"
-    return symbols[Math.floor(Math.random () * symbols.length)];
+    return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
 const generatePassword = (getLowerCase, getUpperCase, getNumber, getSymbol) => {
@@ -45,7 +45,7 @@ const generatePassword = (getLowerCase, getUpperCase, getNumber, getSymbol) => {
         generators.push(getNumber);
     }
 
-    if (symbolInput) {
+    if (symbolInput.checked) {
         generators.push(getSymbol);
     }
 
@@ -84,8 +84,15 @@ openGeneratorButton.addEventListener("click", () => {
     containerGeneratePassword.classList.toggle("hide");
 })
 
+
 copyPasswordBtn.addEventListener("click", (e) => {
-    copyPasswordBtn.innerText = "Senha copiada!";
+    e.preventDefault();
+
+    const password = generatedPasswordElement.querySelector("h4").innerText;
+
+    navigator.clipboard.writeText(password).then(() => {
+        copyPasswordBtn.innerText = "Senha copiada!";
+    })
 
     setTimeout(() => {
         copyPasswordBtn.innerText = "Copiar senha"
